@@ -109,5 +109,4 @@ ScrollTrigger.create({
   Start: "20% top",
   end: "70% 10%",
   toggleActions: "play none none reverse",
-  markers: true,
 });
