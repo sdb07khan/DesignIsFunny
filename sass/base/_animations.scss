@@ -1,0 +1,8 @@
+@keyframes moveDiagonal {
+  from {
+    transform: translate3d(0, 0, 0); /* Start from bottom-left corner */
+  }
+  to {
+    transform: translate3d(100%, -100%, 0); /* Move to top-right corner */
+  }
+}

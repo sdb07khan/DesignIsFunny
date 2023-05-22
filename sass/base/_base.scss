@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //10px
+
+  //   @media only screen and (max-width: $bp-medium) {
+  //     font-size: 50%; //8px
+  //   }
+
+  //   @media only screen and (max-width: $bp-small) {
+  //     font-size: 56.25%; //9px
+  //   }
+}
+
+body {
+  background-color: var(--grey-0);
+}
+
+.primary-site {
+  padding: 4rem;
+  width: 100%;
+  max-width: 180rem;
+  margin-inline: auto;
+}

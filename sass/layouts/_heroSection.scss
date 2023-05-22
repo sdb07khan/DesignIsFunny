@@ -1,0 +1,55 @@
+.hero {
+  height: 85vh;
+  margin-bottom: 12rem;
+
+  .heroContainer {
+    height: 100%;
+
+    .heroHeaderBox {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .heroHeading {
+        .line {
+          clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%);
+        }
+
+        .char {
+          transform: translateY(9rem) translateZ(10rem) perspective(1500px)
+            rotateX(90deg) skewY(10deg) scaleY(0.8);
+          transition: all 0.3s;
+          transform-style: preserve-3d;
+        }
+
+        .headingText {
+          font-family: var(--primary-font-bold);
+          font-size: 14rem;
+          font-style: normal;
+          line-height: 0.95;
+          position: relative;
+
+          span {
+            font-family: var(--heading-font-italic-bold);
+          }
+
+          .register {
+            display: inline-block;
+            position: absolute;
+            bottom: 74px;
+            right: 30px;
+            font-size: 3rem;
+          }
+        }
+      }
+
+      .heroCopyrightBox {
+        .copyrightText {
+          font-family: var(--primary-font-medium);
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+:root {
+  --black-0: #000000;
+  --black-1: #1f1f22;
+  --grey-0: #d4cfc4;
+  --white-0: #f9f8f9;
+  --white-1: #ffffff;
+  --primary-font-medium: "polysans-one", sans-serif;
+  --primary-font-bold: "polysans-one", sans-serif;
+  --heading-font-italic-bold: "polysans-two", sans-serif;
+  --heading-font-italic-medium: "polysans-four", sans-serif; }
+
+@font-face {
+  font-family: "polysans-one";
+  src: url(fonts/polysans-one.woff2) format("woff2"); }
+
+@font-face {
+  font-family: "polysans-two";
+  src: url(fonts/polysans-two.woff2) format("woff2"); }
+
+@font-face {
+  font-family: "polysans-three";
+  src: url(fonts/polysans-three.woff2) format("woff2"); }
+
+@font-face {
+  font-family: "polysans-four";
+  src: url(fonts/polysans-four.woff2) format("woff2"); }
+
+@keyframes moveDiagonal {
+  from {
+    transform: translate3d(0, 0, 0);
+    /* Start from bottom-left corner */ }
+  to {
+    transform: translate3d(100%, -100%, 0);
+    /* Move to top-right corner */ } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-color: var(--grey-0); }
+
+.primary-site {
+  padding: 4rem;
+  width: 100%;
+  max-width: 180rem;
+  margin-inline: auto; }
+
+.italicBold {
+  font-family: var(--heading-font-italic-bold); }
+
+.about {
+  height: 100vh;
+  padding-top: 12rem; }
+  .about .aboutContainer {
+    display: flex;
+    justify-content: space-between; }
+    .about .aboutContainer .introHeadingBox .introHeading {
+      font-family: var(--primary-font-bold);
+      font-size: 4rem;
+      line-height: 1.2; }
+      .about .aboutContainer .introHeadingBox .introHeading .introRegister {
+        position: relative;
+        display: inline; }
+        .about .aboutContainer .introHeadingBox .introHeading .introRegister div {
+          font-size: 1.6rem;
+          display: inline;
+          position: absolute;
+          top: 4px;
+          left: -2px; }
+      .about .aboutContainer .introHeadingBox .introHeading .introStar {
+        opacity: 0.7;
+        font-weight: 500; }
+      .about .aboutContainer .introHeadingBox .introHeading .at {
+        font-family: var(--primary-font-medium);
+        font-weight: 500; }
+      .about .aboutContainer .introHeadingBox .introHeading .introLink {
+        text-decoration: none;
+        color: var(--black-0);
+        font-size: 4rem;
+        position: relative; }
+        .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer {
+          display: inline-flex;
+          gap: 8px; }
+          .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer svg {
+            height: 2rem;
+            width: 2rem; }
+          .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer .svgBox1 {
+            display: block;
+            /* Show svgBox1 initially */ }
+          .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer .svgBox2 {
+            position: absolute;
+            bottom: 0;
+            right: -26px;
+            display: none;
+            /* Hide svgBox2 initially */ }
+      .about .aboutContainer .introHeadingBox .introHeading .introLink::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: scaleX(1);
+        transform-origin: bottom left;
+        height: 4px;
+        background-color: var(--black-0);
+        display: block;
+        transition: transform 0.3s ease-out; }
+      .about .aboutContainer .introHeadingBox .introHeading .introLink:hover::after {
+        transform: scaleX(0);
+        transform-origin: bottom right; }
+      .about .aboutContainer .introHeadingBox .introHeading .introLink:hover .linkContainer .svgBox1 {
+        display: none;
+        /* Hide svgBox1 on hover */ }
+      .about .aboutContainer .introHeadingBox .introHeading .introLink:hover .linkContainer .svgBox2 {
+        display: block;
+        /* Show svgBox2 on hover */
+        animation: moveDiagonal 0.3s ease-out forwards; }
+  .about .photoContainer {
+    position: relative;
+    height: 94vh;
+    width: 46rem;
+    overflow: hidden; }
+    .about .photoContainer .image1Box,
+    .about .photoContainer .image2Box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      transition: transform 1s cubic-bezier(1, -0.04, 0.52, 0.35); }
+      .about .photoContainer .image1Box .image,
+      .about .photoContainer .image2Box .image {
+        width: 100%;
+        object-fit: cover; }
+    .about .photoContainer:hover .image2Box {
+      transform: translateY(-100%); }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 3.4rem 4rem 0 4rem;
+  display: block;
+  z-index: 10000000; }
+  .header .nav .navList {
+    list-style: none;
+    font-family: var(--primary-font-medium);
+    font-size: 1.9rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between; }
+    .header .nav .navList .navItem .navItemBox .navItemLink {
+      text-decoration: none;
+      color: var(--black-0);
+      position: relative;
+      text-shadow: none;
+      transition: text-shadow 0.3s ease-in-out; }
+      .header .nav .navList .navItem .navItemBox .navItemLink:hover {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+      .header .nav .navList .navItem .navItemBox .navItemLink::after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        height: 2px;
+        background-color: var(--black-0);
+        display: block;
+        transition: transform 0.3s ease-out; }
+      .header .nav .navList .navItem .navItemBox .navItemLink:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left; }
+
+.hero {
+  height: 85vh;
+  margin-bottom: 12rem; }
+  .hero .heroContainer {
+    height: 100%; }
+    .hero .heroContainer .heroHeaderBox {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end; }
+      .hero .heroContainer .heroHeaderBox .heroHeading .line {
+        clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%); }
+      .hero .heroContainer .heroHeaderBox .heroHeading .char {
+        transform: translateY(9rem) translateZ(10rem) perspective(1500px) rotateX(90deg) skewY(10deg) scaleY(0.8);
+        transition: all 0.3s;
+        transform-style: preserve-3d; }
+      .hero .heroContainer .heroHeaderBox .heroHeading .headingText {
+        font-family: var(--primary-font-bold);
+        font-size: 14rem;
+        font-style: normal;
+        line-height: 0.95;
+        position: relative; }
+        .hero .heroContainer .heroHeaderBox .heroHeading .headingText span {
+          font-family: var(--heading-font-italic-bold); }
+        .hero .heroContainer .heroHeaderBox .heroHeading .headingText .register {
+          display: inline-block;
+          position: absolute;
+          bottom: 74px;
+          right: 30px;
+          font-size: 3rem; }
+      .hero .heroContainer .heroHeaderBox .heroCopyrightBox .copyrightText {
+        font-family: var(--primary-font-medium);
+        font-size: 1.8rem; }

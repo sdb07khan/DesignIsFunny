@@ -1,0 +1,40 @@
+:root {
+  --black-0: #000000;
+  --black-1: #1f1f22;
+
+  --grey-0: #d4cfc4;
+
+  --white-0: #f9f8f9;
+  --white-1: #ffffff;
+
+  --primary-font-medium: "polysans-one", sans-serif;
+  --primary-font-bold: "polysans-one", sans-serif;
+  --heading-font-italic-bold: "polysans-two", sans-serif;
+  --heading-font-italic-medium: "polysans-four", sans-serif;
+}
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 62.5em; //1000px
+$bp-large: 50em; //800px
+$bp-medium: 37.5em; //600px
+$bp-small: 32.5em; //520px
+
+@font-face {
+  font-family: "polysans-one";
+  src: url(fonts/polysans-one.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "polysans-two";
+  src: url(fonts/polysans-two.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "polysans-three";
+  src: url(fonts/polysans-three.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "polysans-four";
+  src: url(fonts/polysans-four.woff2) format("woff2");
+}
