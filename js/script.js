@@ -105,7 +105,7 @@ aboutHeadingReveal.from("#contentPara-js .line", {
 
 ScrollTrigger.create({
   animation: aboutHeadingReveal,
-  trigger: ".contentBox",
+  trigger: ".aboutContainer",
   Start: "20% top",
   end: "70% 10%",
   toggleActions: "play none none reverse",
