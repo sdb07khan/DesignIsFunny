@@ -136,7 +136,7 @@ body {
       height: 100%;
       display: flex;
       justify-content: center;
-      transition: transform 1s cubic-bezier(1, -0.04, 0.52, 0.35); }
+      transition: transform 0.8s cubic-bezier(1, -0.04, 0.52, 0.35); }
       .about .photoContainer .image1Box .image,
       .about .photoContainer .image2Box .image {
         width: 100%;
