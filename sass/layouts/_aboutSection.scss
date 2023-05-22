@@ -1,95 +1,160 @@
 .about {
-  height: 100vh;
-  padding-top: 12rem;
+  height: 100%;
+  padding: 12rem 0 6rem 0;
 
   .aboutContainer {
     display: flex;
     justify-content: space-between;
 
-    .introHeadingBox {
-      .introHeading {
-        font-family: var(--primary-font-bold);
-        font-size: 4rem;
-        line-height: 1.2;
+    .aboutBox {
+      position: relative;
+      width: 60%;
 
-        .introRegister {
-          position: relative;
-          display: inline;
+      .headingContainer {
+        position: relative;
+        z-index: 1000;
 
-          div {
-            font-size: 1.6rem;
-            display: inline;
-            position: absolute;
-            top: 4px;
-            left: -2px;
-          }
-        }
-
-        .introStar {
-          opacity: 0.7;
-          font-weight: 500;
-        }
-
-        .at {
-          font-family: var(--primary-font-medium);
-          font-weight: 500;
-        }
-
-        .introLink {
-          text-decoration: none;
-          color: var(--black-0);
+        .introHeading {
+          font-family: var(--primary-font-bold);
           font-size: 4rem;
-          position: relative;
-          //   border-bottom: 4px solid black;
+          line-height: 1.2;
 
-          .linkContainer {
-            display: inline-flex;
-            gap: 8px;
+          .line {
+            // clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%);
+          }
 
-            svg {
-              height: 2rem;
-              width: 2rem;
-            }
+          .word {
+            // transform: translateY(6rem) scaleY(0);
+            // opacity: 0;
+          }
 
-            .svgBox1 {
-              display: block; /* Show svgBox1 initially */
-            }
+          .introRegister {
+            position: relative;
+            display: inline;
 
-            .svgBox2 {
+            div {
+              font-size: 1.6rem;
+              display: inline;
               position: absolute;
-              bottom: 0;
-              right: -26px;
-              display: none; /* Hide svgBox2 initially */
+              top: -12px;
+              left: -1px;
             }
+          }
+
+          .introStar {
+            opacity: 0.7;
+            font-weight: 500;
+          }
+
+          .at {
+            font-family: var(--primary-font-medium);
+            font-weight: 500;
+          }
+
+          .introLink {
+            text-decoration: none;
+            color: var(--black-0);
+            font-size: 4rem;
+            position: relative;
+            //   border-bottom: 4px solid black;
+
+            .linkContainer {
+              display: inline-flex;
+              gap: 8px;
+
+              svg {
+                height: 2rem;
+                width: 2rem;
+              }
+
+              .svgBox1 {
+                display: block; /* Show svgBox1 initially */
+              }
+
+              .svgBox2 {
+                position: absolute;
+                bottom: 0;
+                right: -26px;
+                display: none; /* Hide svgBox2 initially */
+              }
+            }
+          }
+
+          .introLink::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            height: 4px;
+            background-color: var(--black-0);
+            display: block;
+            transition: transform 0.3s ease-out;
+          }
+
+          .introLink:hover::after {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+          }
+
+          .introLink:hover .linkContainer .svgBox1 {
+            display: none; /* Hide svgBox1 on hover */
+          }
+
+          .introLink:hover .linkContainer .svgBox2 {
+            display: block; /* Show svgBox2 on hover */
+            animation: moveDiagonal 0.3s ease-out forwards;
+          }
+        }
+      }
+
+      .contentContainer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        gap: 12vw;
+        opacity: 0.7;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+
+        .contentBox {
+          width: 30rem;
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+
+          .para {
+            font-family: var(--primary-font-medium);
+            font-size: 1.4rem;
           }
         }
 
-        .introLink::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          transform: scaleX(1);
-          transform-origin: bottom left;
-          height: 4px;
-          background-color: var(--black-0);
-          display: block;
-          transition: transform 0.3s ease-out;
-        }
+        .shortDescBox {
+          font-family: var(--primary-font-medium);
+          font-size: 1.4rem;
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          width: 30rem;
 
-        .introLink:hover::after {
-          transform: scaleX(0);
-          transform-origin: bottom right;
-        }
+          .starBox {
+            display: flex;
+            align-items: center;
 
-        .introLink:hover .linkContainer .svgBox1 {
-          display: none; /* Hide svgBox1 on hover */
-        }
+            span {
+              font-size: 4rem !important;
+              margin-top: 7px;
+            }
+          }
 
-        .introLink:hover .linkContainer .svgBox2 {
-          display: block; /* Show svgBox2 on hover */
-          animation: moveDiagonal 0.3s ease-out forwards;
+          .shortDesc {
+            p {
+            }
+          }
         }
       }
     }
@@ -117,10 +182,6 @@
         object-fit: cover;
       }
     }
-
-    // .image2Box {
-    //   transform: translateY(100%);
-    // }
 
     &:hover .image2Box {
       transform: translateY(-100%);

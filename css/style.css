@@ -56,72 +56,109 @@ body {
   font-family: var(--heading-font-italic-bold); }
 
 .about {
-  height: 100vh;
-  padding-top: 12rem; }
+  height: 100%;
+  padding: 12rem 0 6rem 0; }
   .about .aboutContainer {
     display: flex;
     justify-content: space-between; }
-    .about .aboutContainer .introHeadingBox .introHeading {
-      font-family: var(--primary-font-bold);
-      font-size: 4rem;
-      line-height: 1.2; }
-      .about .aboutContainer .introHeadingBox .introHeading .introRegister {
+    .about .aboutContainer .aboutBox {
+      position: relative;
+      width: 60%; }
+      .about .aboutContainer .aboutBox .headingContainer {
         position: relative;
-        display: inline; }
-        .about .aboutContainer .introHeadingBox .introHeading .introRegister div {
-          font-size: 1.6rem;
-          display: inline;
-          position: absolute;
-          top: 4px;
-          left: -2px; }
-      .about .aboutContainer .introHeadingBox .introHeading .introStar {
-        opacity: 0.7;
-        font-weight: 500; }
-      .about .aboutContainer .introHeadingBox .introHeading .at {
-        font-family: var(--primary-font-medium);
-        font-weight: 500; }
-      .about .aboutContainer .introHeadingBox .introHeading .introLink {
-        text-decoration: none;
-        color: var(--black-0);
-        font-size: 4rem;
-        position: relative; }
-        .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer {
-          display: inline-flex;
-          gap: 8px; }
-          .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer svg {
-            height: 2rem;
-            width: 2rem; }
-          .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer .svgBox1 {
-            display: block;
-            /* Show svgBox1 initially */ }
-          .about .aboutContainer .introHeadingBox .introHeading .introLink .linkContainer .svgBox2 {
+        z-index: 1000; }
+        .about .aboutContainer .aboutBox .headingContainer .introHeading {
+          font-family: var(--primary-font-bold);
+          font-size: 4rem;
+          line-height: 1.2; }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introRegister {
+            position: relative;
+            display: inline; }
+            .about .aboutContainer .aboutBox .headingContainer .introHeading .introRegister div {
+              font-size: 1.6rem;
+              display: inline;
+              position: absolute;
+              top: -12px;
+              left: -1px; }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introStar {
+            opacity: 0.7;
+            font-weight: 500; }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .at {
+            font-family: var(--primary-font-medium);
+            font-weight: 500; }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink {
+            text-decoration: none;
+            color: var(--black-0);
+            font-size: 4rem;
+            position: relative; }
+            .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink .linkContainer {
+              display: inline-flex;
+              gap: 8px; }
+              .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink .linkContainer svg {
+                height: 2rem;
+                width: 2rem; }
+              .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink .linkContainer .svgBox1 {
+                display: block;
+                /* Show svgBox1 initially */ }
+              .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink .linkContainer .svgBox2 {
+                position: absolute;
+                bottom: 0;
+                right: -26px;
+                display: none;
+                /* Hide svgBox2 initially */ }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink::after {
+            content: "";
             position: absolute;
+            left: 0;
             bottom: 0;
-            right: -26px;
+            width: 100%;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            height: 4px;
+            background-color: var(--black-0);
+            display: block;
+            transition: transform 0.3s ease-out; }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink:hover::after {
+            transform: scaleX(0);
+            transform-origin: bottom right; }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink:hover .linkContainer .svgBox1 {
             display: none;
-            /* Hide svgBox2 initially */ }
-      .about .aboutContainer .introHeadingBox .introHeading .introLink::after {
-        content: "";
+            /* Hide svgBox1 on hover */ }
+          .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink:hover .linkContainer .svgBox2 {
+            display: block;
+            /* Show svgBox2 on hover */
+            animation: moveDiagonal 0.3s ease-out forwards; }
+      .about .aboutContainer .aboutBox .contentContainer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        gap: 12vw;
+        opacity: 0.7;
         position: absolute;
-        left: 0;
         bottom: 0;
-        width: 100%;
-        transform: scaleX(1);
-        transform-origin: bottom left;
-        height: 4px;
-        background-color: var(--black-0);
-        display: block;
-        transition: transform 0.3s ease-out; }
-      .about .aboutContainer .introHeadingBox .introHeading .introLink:hover::after {
-        transform: scaleX(0);
-        transform-origin: bottom right; }
-      .about .aboutContainer .introHeadingBox .introHeading .introLink:hover .linkContainer .svgBox1 {
-        display: none;
-        /* Hide svgBox1 on hover */ }
-      .about .aboutContainer .introHeadingBox .introHeading .introLink:hover .linkContainer .svgBox2 {
-        display: block;
-        /* Show svgBox2 on hover */
-        animation: moveDiagonal 0.3s ease-out forwards; }
+        left: 0;
+        z-index: 5; }
+        .about .aboutContainer .aboutBox .contentContainer .contentBox {
+          width: 30rem;
+          display: flex;
+          flex-direction: column;
+          gap: 4rem; }
+          .about .aboutContainer .aboutBox .contentContainer .contentBox .para {
+            font-family: var(--primary-font-medium);
+            font-size: 1.4rem; }
+        .about .aboutContainer .aboutBox .contentContainer .shortDescBox {
+          font-family: var(--primary-font-medium);
+          font-size: 1.4rem;
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          width: 30rem; }
+          .about .aboutContainer .aboutBox .contentContainer .shortDescBox .starBox {
+            display: flex;
+            align-items: center; }
+            .about .aboutContainer .aboutBox .contentContainer .shortDescBox .starBox span {
+              font-size: 4rem !important;
+              margin-top: 7px; }
   .about .photoContainer {
     position: relative;
     height: 94vh;
@@ -195,18 +232,21 @@ body {
       justify-content: space-between;
       align-items: flex-end; }
       .hero .heroContainer .heroHeaderBox .heroHeading .line {
-        clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%); }
+        overflow: hidden;
+        margin-top: -24px; }
       .hero .heroContainer .heroHeaderBox .heroHeading .char {
-        transform: translateY(9rem) translateZ(10rem) perspective(1500px) rotateX(90deg) skewY(10deg) scaleY(0.8);
         transition: all 0.3s;
-        transform-style: preserve-3d; }
+        transform-style: preserve-3d;
+        padding-bottom: 24px;
+        opacity: 0;
+        visibility: hidden; }
       .hero .heroContainer .heroHeaderBox .heroHeading .headingText {
         font-family: var(--primary-font-bold);
         font-size: 14rem;
         font-style: normal;
         line-height: 0.95;
         position: relative; }
-        .hero .heroContainer .heroHeaderBox .heroHeading .headingText span {
+        .hero .heroContainer .heroHeaderBox .heroHeading .headingText .line:nth-of-type(2) .word:nth-of-type(2) {
           font-family: var(--heading-font-italic-bold); }
         .hero .heroContainer .heroHeaderBox .heroHeading .headingText .register {
           display: inline-block;
@@ -214,6 +254,8 @@ body {
           bottom: 74px;
           right: 30px;
           font-size: 3rem; }
+          .hero .heroContainer .heroHeaderBox .heroHeading .headingText .register .char {
+            padding-bottom: 0; }
       .hero .heroContainer .heroHeaderBox .heroCopyrightBox .copyrightText {
         font-family: var(--primary-font-medium);
         font-size: 1.8rem; }

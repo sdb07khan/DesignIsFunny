@@ -13,14 +13,21 @@
 
       .heroHeading {
         .line {
-          clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%);
+          //clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%);
+
+          overflow: hidden;
+          margin-top: -24px;
         }
 
         .char {
-          transform: translateY(9rem) translateZ(10rem) perspective(1500px)
-            rotateX(90deg) skewY(10deg) scaleY(0.8);
+          //   transform: translateY(9rem) translateZ(10rem) perspective(1500px)
+          //     rotateX(90deg) skewY(10deg) scaleY(0.8);
           transition: all 0.3s;
           transform-style: preserve-3d;
+          padding-bottom: 24px;
+          opacity: 0;
+
+          visibility: hidden;
         }
 
         .headingText {
@@ -30,7 +37,7 @@
           line-height: 0.95;
           position: relative;
 
-          span {
+          .line:nth-of-type(2) .word:nth-of-type(2) {
             font-family: var(--heading-font-italic-bold);
           }
 
@@ -40,6 +47,9 @@
             bottom: 74px;
             right: 30px;
             font-size: 3rem;
+            .char {
+              padding-bottom: 0;
+            }
           }
         }
       }
