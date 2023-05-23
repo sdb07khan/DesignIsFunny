@@ -1,0 +1,123 @@
+.work {
+  padding: 8rem 0 12rem 0;
+
+  .workContainer {
+    // Styles for the work container
+
+    .workList {
+      // Styles for the work list
+
+      .item {
+        list-style: none;
+
+        .itemLink {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-decoration: none;
+          color: var(--black-0);
+          position: relative;
+          padding: 3.8rem 0;
+
+          .headingBox {
+            width: 50%;
+            overflow: hidden;
+
+            .headingText {
+              font-size: 4rem;
+              position: relative;
+
+              .headingDefault {
+                display: inline-block;
+                font-family: var(--primary-font-bold);
+              }
+
+              .headingHover {
+                font-family: var(--heading-font-italic-bold);
+                position: absolute !important;
+                left: 0;
+                bottom: -50px;
+              }
+            }
+          }
+
+          .rightCategoryContainer {
+            display: flex;
+            flex-grow: 1;
+            justify-content: space-between;
+
+            transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38);
+
+            .workCategories {
+              // Styles for the work categories
+
+              .categoryBox {
+                // Styles for the category box
+
+                .categoryList {
+                  display: flex;
+                  font-family: var(--primary-font-bold);
+                  font-size: 1.8rem;
+
+                  .listItem {
+                    list-style: none;
+                  }
+
+                  .listItem:not(:last-child)::after {
+                    content: "/";
+                  }
+                }
+              }
+            }
+
+            .workPlatform {
+              // Styles for the work platform
+
+              .platformBox {
+                // Styles for the platform box
+
+                .platformName {
+                  font-family: var(--primary-font-bold);
+                  font-size: 1.8rem;
+                }
+              }
+            }
+          }
+          .svgContainer {
+            display: none;
+
+            .svgBox {
+              // Styles for the SVG box
+
+              svg {
+                height: 2rem;
+                width: 2rem;
+              }
+            }
+          }
+          .borderBottom {
+            border-bottom: 2px solid var(--black-0);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        &:hover .rightCategoryContainer {
+          transform: translateX(-4rem);
+        }
+
+        // .itemLink:not(:last-child)::after {
+        //   content: "";
+        //   border-bottom: 2px solid var(--black-0);
+        //   position: absolute;
+        //   bottom: 0;
+        //   left: 0;
+        //   right: 0;
+        //   width: 100%;
+        // }
+      }
+    }
+  }
+}

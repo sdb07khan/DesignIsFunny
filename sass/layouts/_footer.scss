@@ -1,0 +1,159 @@
+// Footer
+.footer {
+  padding-top: 6rem;
+
+  .footerContainer {
+    // Footer container styles
+
+    .footerHeadingBox {
+      // Footer heading box styles
+
+      .headingText {
+        font-family: var(--primary-font-bold);
+        font-size: 14rem;
+        line-height: 0.9;
+      }
+    }
+
+    .footerContactBox {
+      display: flex;
+      justify-content: space-between;
+      padding: 8rem 0 6rem 0;
+
+      .rotatingAnimationBox {
+        display: block;
+        width: 100%;
+        background: var(--main-color);
+        position: relative;
+
+        .circular-text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          #rotated {
+            font-family: var(--primary-font-medium);
+            font-size: 1.6rem;
+          }
+
+          .dot {
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+          }
+        }
+      }
+
+      .emailBox {
+        // Email box styles
+
+        .emailContent {
+          // Email content styles
+
+          .emailLink {
+            display: inline-flex;
+            text-decoration: none;
+            color: var(--black-0);
+            align-items: flex-end;
+            gap: 8px;
+            position: relative;
+
+            .svgBox {
+              width: 20%;
+            }
+
+            .email {
+              font-family: var(--primary-font-bold);
+              font-size: 4rem;
+              font-weight: 600;
+            }
+          }
+
+          .emailLink::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            height: 4px;
+            background-color: var(--black-0);
+            display: block;
+            transition: transform 0.3s ease-out;
+          }
+
+          .emailLink:hover::after {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+          }
+        }
+      }
+    }
+
+    .footerContactLinkBox {
+      padding-top: 8rem;
+
+      .socialList {
+        list-style: none;
+        font-family: var(--primary-font-medium);
+        font-size: 1.9rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+
+        .socailItem {
+          // Social item styles
+
+          .socialItemBox {
+            // Social item box styles
+
+            .socialItemLink {
+              text-decoration: none;
+              color: var(--black-0);
+              position: relative;
+              text-shadow: none;
+              transition: text-shadow 0.3s ease-in-out;
+
+              &:hover {
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+              }
+
+              &::after {
+                content: " ";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                height: 2px;
+                background-color: var(--black-0);
+                display: block;
+                transition: transform 0.3s ease-out;
+              }
+
+              &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+              }
+
+              span {
+                .socialItemName {
+                  // Social item name styles
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

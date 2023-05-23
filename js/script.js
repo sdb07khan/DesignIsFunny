@@ -39,7 +39,7 @@ ScrollTrigger.create({
   trigger: ".hero",
   Start: "20%",
   end: "70% 10%",
-  toggleActions: "play none none reverse",
+  toggleActions: "play none none none",
 });
 
 // text reveal animation about section heading HIGHLIGHT
@@ -81,7 +81,7 @@ ScrollTrigger.create({
   trigger: ".aboutContainer",
   Start: "20% top",
   end: "70% 10%",
-  toggleActions: "play none none reverse",
+  toggleActions: "play none none none",
 });
 
 // text reveal animation about para section HIGHLIGHT
@@ -108,5 +108,60 @@ ScrollTrigger.create({
   trigger: ".aboutContainer",
   Start: "20% top",
   end: "70% 10%",
-  toggleActions: "play none none reverse",
+  toggleActions: "play none none none",
 });
+
+// text reveal animation footer section HIGHLIGHT
+
+const footerText = new SplitType("#footerHeading-js");
+
+const footerTextReveal = gsap.timeline();
+
+footerTextReveal.set("#footerHeading-js .char", {
+  autoAlpha: 0,
+  yPercent: 60,
+  rotateX: 70,
+});
+footerTextReveal.to(
+  "#footerHeading-js .char",
+  {
+    autoAlpha: 1,
+    rotateX: 0,
+    yPercent: 0,
+    stagger: 0.05,
+    delay: 0.4,
+    duration: 2.5,
+    ease: "expo.out",
+  },
+  0.05
+);
+
+ScrollTrigger.create({
+  animation: footerTextReveal,
+  trigger: ".footerContainer",
+  Start: " 20%",
+  end: "70% 10%",
+  toggleActions: "play none none none",
+});
+
+// // work section text reveal HIGHLIGHT
+
+// const workHeading = new SplitType(".para");
+
+// const workHeadingReveal = gsap.timeline();
+
+// function animateOnHover() {
+//   workHeadingReveal.from("#workHeading-js .char", {
+//     autoAlpha: 0,
+//     y: 20,
+//     stagger: 0.05,
+//     duration: 1.5,
+//     ease: "expo.out",
+//   });
+// }
+
+// const itemLink = document.querySelector(".itemLink");
+// itemLink.addEventListener("mouseenter", animateOnHover);
+// itemLink.addEventListener("mouseleave", () => {
+//   workHeadingReveal.kill(); // Optional: Kill the animation on mouseleave
+// });

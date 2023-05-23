@@ -55,9 +55,14 @@ body {
 .italicBold {
   font-family: var(--heading-font-italic-bold); }
 
+.svgSize {
+  height: 2.8rem;
+  width: 2.8rem;
+  padding-bottom: 6px; }
+
 .about {
   height: 100%;
-  padding: 12rem 0 6rem 0; }
+  padding: 12rem 0 8rem 0; }
   .about .aboutContainer {
     display: flex;
     justify-content: space-between; }
@@ -181,6 +186,100 @@ body {
     .about .photoContainer:hover .image2Box {
       transform: translateY(-100%); }
 
+.footer {
+  padding-top: 6rem; }
+  .footer .footerContainer .footerHeadingBox .headingText {
+    font-family: var(--primary-font-bold);
+    font-size: 14rem;
+    line-height: 0.9; }
+  .footer .footerContainer .footerContactBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 8rem 0 6rem 0; }
+    .footer .footerContainer .footerContactBox .rotatingAnimationBox {
+      display: block;
+      width: 100%;
+      background: var(--main-color);
+      position: relative; }
+      .footer .footerContainer .footerContactBox .rotatingAnimationBox .circular-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .footer .footerContainer .footerContactBox .rotatingAnimationBox .circular-text #rotated {
+          font-family: var(--primary-font-medium);
+          font-size: 1.6rem; }
+        .footer .footerContainer .footerContactBox .rotatingAnimationBox .circular-text .dot {
+          display: block;
+          width: 50px;
+          height: 50px;
+          position: absolute; }
+    .footer .footerContainer .footerContactBox .emailBox .emailContent .emailLink {
+      display: inline-flex;
+      text-decoration: none;
+      color: var(--black-0);
+      align-items: flex-end;
+      gap: 8px;
+      position: relative; }
+      .footer .footerContainer .footerContactBox .emailBox .emailContent .emailLink .svgBox {
+        width: 20%; }
+      .footer .footerContainer .footerContactBox .emailBox .emailContent .emailLink .email {
+        font-family: var(--primary-font-bold);
+        font-size: 4rem;
+        font-weight: 600; }
+    .footer .footerContainer .footerContactBox .emailBox .emailContent .emailLink::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      height: 4px;
+      background-color: var(--black-0);
+      display: block;
+      transition: transform 0.3s ease-out; }
+    .footer .footerContainer .footerContactBox .emailBox .emailContent .emailLink:hover::after {
+      transform: scaleX(0);
+      transform-origin: bottom right; }
+  .footer .footerContainer .footerContactLinkBox {
+    padding-top: 8rem; }
+    .footer .footerContainer .footerContactLinkBox .socialList {
+      list-style: none;
+      font-family: var(--primary-font-medium);
+      font-size: 1.9rem;
+      font-weight: 400;
+      display: flex;
+      justify-content: space-between; }
+      .footer .footerContainer .footerContactLinkBox .socialList .socailItem .socialItemBox .socialItemLink {
+        text-decoration: none;
+        color: var(--black-0);
+        position: relative;
+        text-shadow: none;
+        transition: text-shadow 0.3s ease-in-out; }
+        .footer .footerContainer .footerContactLinkBox .socialList .socailItem .socialItemBox .socialItemLink:hover {
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+        .footer .footerContainer .footerContactLinkBox .socialList .socailItem .socialItemBox .socialItemLink::after {
+          content: " ";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          height: 2px;
+          background-color: var(--black-0);
+          display: block;
+          transition: transform 0.3s ease-out; }
+        .footer .footerContainer .footerContactLinkBox .socialList .socailItem .socialItemBox .socialItemLink:hover::after {
+          transform: scaleX(1);
+          transform-origin: bottom left; }
+
 .header {
   position: fixed;
   top: 0;
@@ -259,3 +358,59 @@ body {
       .hero .heroContainer .heroHeaderBox .heroCopyrightBox .copyrightText {
         font-family: var(--primary-font-medium);
         font-size: 1.8rem; }
+
+.work {
+  padding: 8rem 0 12rem 0; }
+  .work .workContainer .workList .item {
+    list-style: none; }
+    .work .workContainer .workList .item .itemLink {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: var(--black-0);
+      position: relative;
+      padding: 3.8rem 0; }
+      .work .workContainer .workList .item .itemLink .headingBox {
+        width: 50%;
+        overflow: hidden; }
+        .work .workContainer .workList .item .itemLink .headingBox .headingText {
+          font-size: 4rem;
+          position: relative; }
+          .work .workContainer .workList .item .itemLink .headingBox .headingText .headingDefault {
+            display: inline-block;
+            font-family: var(--primary-font-bold); }
+          .work .workContainer .workList .item .itemLink .headingBox .headingText .headingHover {
+            font-family: var(--heading-font-italic-bold);
+            position: absolute !important;
+            left: 0;
+            bottom: -50px; }
+      .work .workContainer .workList .item .itemLink .rightCategoryContainer {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        transition: transform 0.5s cubic-bezier(1, -0.02, 0.8, 0.45); }
+        .work .workContainer .workList .item .itemLink .rightCategoryContainer .workCategories .categoryBox .categoryList {
+          display: flex;
+          font-family: var(--primary-font-bold);
+          font-size: 1.8rem; }
+          .work .workContainer .workList .item .itemLink .rightCategoryContainer .workCategories .categoryBox .categoryList .listItem {
+            list-style: none; }
+          .work .workContainer .workList .item .itemLink .rightCategoryContainer .workCategories .categoryBox .categoryList .listItem:not(:last-child)::after {
+            content: "/"; }
+        .work .workContainer .workList .item .itemLink .rightCategoryContainer .workPlatform .platformBox .platformName {
+          font-family: var(--primary-font-bold);
+          font-size: 1.8rem; }
+      .work .workContainer .workList .item .itemLink .svgContainer {
+        display: none; }
+        .work .workContainer .workList .item .itemLink .svgContainer .svgBox svg {
+          height: 2rem;
+          width: 2rem; }
+      .work .workContainer .workList .item .itemLink .borderBottom {
+        border-bottom: 2px solid var(--black-0);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+    .work .workContainer .workList .item:hover .rightCategoryContainer {
+      transform: translateX(-4rem); }
