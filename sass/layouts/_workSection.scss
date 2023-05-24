@@ -9,6 +9,12 @@
 
       .item {
         list-style: none;
+        // opacity: 1;
+        // transition: opacity 0.3s ease;
+
+        // &:not(:hover) {
+        //   opacity: 0.5;
+        // }
 
         .itemLink {
           display: flex;
@@ -30,6 +36,7 @@
               .headingDefault {
                 display: inline-block;
                 font-family: var(--primary-font-bold);
+                transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38);
               }
 
               .headingHover {
@@ -37,6 +44,7 @@
                 position: absolute !important;
                 left: 0;
                 bottom: -50px;
+                transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38);
               }
             }
           }
@@ -45,7 +53,6 @@
             display: flex;
             flex-grow: 1;
             justify-content: space-between;
-
             transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38);
 
             .workCategories {
@@ -101,22 +108,27 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            transition: all 0.2s cubic-bezier(0.86, 0.05, 0.38, 0.38);
+          }
+        }
+
+        &:hover {
+          .headingDefault {
+            transform: translateY(-100%);
+          }
+
+          .headingHover {
+            transform: translateY(-100%);
           }
         }
 
         &:hover .rightCategoryContainer {
-          transform: translateX(-4rem);
+          transform: translateX(-8rem);
         }
 
-        // .itemLink:not(:last-child)::after {
-        //   content: "";
-        //   border-bottom: 2px solid var(--black-0);
-        //   position: absolute;
-        //   bottom: 0;
-        //   left: 0;
-        //   right: 0;
-        //   width: 100%;
-        // }
+        &:hover .borderBottom {
+          border-bottom: 4px solid var(--black-0);
+        }
       }
     }
   }

@@ -48,19 +48,6 @@ const aboutHeading = new SplitType(".introHeading");
 
 const aboutHeadingReveal = gsap.timeline();
 
-// aboutHeadingReveal.fromTo(
-//   "#introHeadingText-js .word",
-//   { autoAlpha: 0, y: 10 },
-//   {
-//     autoAlpha: 1,
-//     y: 0,
-//     stagger: 0.04,
-//     delay: 0.2,
-//     duration: 1.2,
-//     ease: "power2.out",
-//   }
-// );
-
 aboutHeadingReveal.set("#introHeadingText-js .word", {
   autoAlpha: 0,
   yPercent: 60,
@@ -82,6 +69,7 @@ ScrollTrigger.create({
   Start: "20% top",
   end: "70% 10%",
   toggleActions: "play none none none",
+  // onComplete: () => {},
 });
 
 // text reveal animation about para section HIGHLIGHT
@@ -104,10 +92,10 @@ aboutHeadingReveal.from("#contentPara-js .line", {
 });
 
 ScrollTrigger.create({
-  animation: aboutHeadingReveal,
-  trigger: ".aboutContainer",
-  Start: "20% top",
-  end: "70% 10%",
+  animation: aboutParaReveal,
+  trigger: ".about",
+  start: "top bottom",
+  end: "10% 50%",
   toggleActions: "play none none none",
 });
 
@@ -139,7 +127,7 @@ footerTextReveal.to(
 ScrollTrigger.create({
   animation: footerTextReveal,
   trigger: ".footerContainer",
-  Start: " 20%",
+  Start: "20%",
   end: "70% 10%",
   toggleActions: "play none none none",
 });
@@ -160,8 +148,20 @@ ScrollTrigger.create({
 //   });
 // }
 
-// const itemLink = document.querySelector(".itemLink");
+// const itemLink = document.querySelector(".item");
 // itemLink.addEventListener("mouseenter", animateOnHover);
 // itemLink.addEventListener("mouseleave", () => {
 //   workHeadingReveal.kill(); // Optional: Kill the animation on mouseleave
 // });
+
+// adding hover class to work list section HIGHLIGHT
+$(document).ready(function () {
+  $(".item").hover(
+    function () {
+      $(".item").not(this).addClass("hovered");
+    },
+    function () {
+      $(".item").not(this).removeClass("hovered");
+    }
+  );
+});

@@ -3,6 +3,19 @@
     transform: translate3d(0, 0, 0); /* Start from bottom-left corner */
   }
   to {
-    transform: translate3d(100%, -100%, 0); /* Move to top-right corner */
+    transform: translate3d(75%, -75%, 0); /* Move to top-right corner */
+  }
+}
+
+/* Animation delay for each character */
+
+@keyframes charAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

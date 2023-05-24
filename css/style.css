@@ -30,8 +30,17 @@
     transform: translate3d(0, 0, 0);
     /* Start from bottom-left corner */ }
   to {
-    transform: translate3d(100%, -100%, 0);
+    transform: translate3d(75%, -75%, 0);
     /* Move to top-right corner */ } }
+
+/* Animation delay for each character */
+@keyframes charAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 *,
 *::after,
@@ -59,6 +68,12 @@ body {
   height: 2.8rem;
   width: 2.8rem;
   padding-bottom: 6px; }
+
+.hovered {
+  opacity: 0.5; }
+
+.zeroOpacity {
+  opacity: 0; }
 
 .about {
   height: 100%;
@@ -107,15 +122,13 @@ body {
                 /* Show svgBox1 initially */ }
               .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink .linkContainer .svgBox2 {
                 position: absolute;
-                bottom: 0;
-                right: -26px;
-                display: none;
-                /* Hide svgBox2 initially */ }
+                bottom: -38px;
+                right: 20px; }
           .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink::after {
             content: "";
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -4px;
             width: 100%;
             transform: scaleX(1);
             transform-origin: bottom left;
@@ -127,7 +140,7 @@ body {
             transform: scaleX(0);
             transform-origin: bottom right; }
           .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink:hover .linkContainer .svgBox1 {
-            display: none;
+            display: none !important;
             /* Hide svgBox1 on hover */ }
           .about .aboutContainer .aboutBox .headingContainer .introHeading .introLink:hover .linkContainer .svgBox2 {
             display: block;
@@ -379,17 +392,19 @@ body {
           position: relative; }
           .work .workContainer .workList .item .itemLink .headingBox .headingText .headingDefault {
             display: inline-block;
-            font-family: var(--primary-font-bold); }
+            font-family: var(--primary-font-bold);
+            transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38); }
           .work .workContainer .workList .item .itemLink .headingBox .headingText .headingHover {
             font-family: var(--heading-font-italic-bold);
             position: absolute !important;
             left: 0;
-            bottom: -50px; }
+            bottom: -50px;
+            transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38); }
       .work .workContainer .workList .item .itemLink .rightCategoryContainer {
         display: flex;
         flex-grow: 1;
         justify-content: space-between;
-        transition: transform 0.5s cubic-bezier(1, -0.02, 0.8, 0.45); }
+        transition: transform 0.5s cubic-bezier(0.86, 0.05, 0.38, 0.38); }
         .work .workContainer .workList .item .itemLink .rightCategoryContainer .workCategories .categoryBox .categoryList {
           display: flex;
           font-family: var(--primary-font-bold);
@@ -411,6 +426,13 @@ body {
         width: 100%;
         position: absolute;
         bottom: 0;
-        left: 0; }
+        left: 0;
+        transition: all 0.2s cubic-bezier(0.86, 0.05, 0.38, 0.38); }
+    .work .workContainer .workList .item:hover .headingDefault {
+      transform: translateY(-100%); }
+    .work .workContainer .workList .item:hover .headingHover {
+      transform: translateY(-100%); }
     .work .workContainer .workList .item:hover .rightCategoryContainer {
-      transform: translateX(-4rem); }
+      transform: translateX(-8rem); }
+    .work .workContainer .workList .item:hover .borderBottom {
+      border-bottom: 4px solid var(--black-0); }

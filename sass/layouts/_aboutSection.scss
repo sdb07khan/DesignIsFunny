@@ -62,6 +62,9 @@
               display: inline-flex;
               gap: 8px;
 
+              .linkText {
+              }
+
               svg {
                 height: 2rem;
                 width: 2rem;
@@ -73,9 +76,8 @@
 
               .svgBox2 {
                 position: absolute;
-                bottom: 0;
-                right: -26px;
-                display: none; /* Hide svgBox2 initially */
+                bottom: -38px;
+                right: 20px;
               }
             }
           }
@@ -84,7 +86,7 @@
             content: "";
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -4px;
             width: 100%;
             transform: scaleX(1);
             transform-origin: bottom left;
@@ -100,7 +102,7 @@
           }
 
           .introLink:hover .linkContainer .svgBox1 {
-            display: none; /* Hide svgBox1 on hover */
+            display: none !important; /* Hide svgBox1 on hover */
           }
 
           .introLink:hover .linkContainer .svgBox2 {
