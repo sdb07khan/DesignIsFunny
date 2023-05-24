@@ -4,6 +4,14 @@
 
   .heroContainer {
     height: 100%;
+    position: relative;
+
+    .iconBoxHero {
+      position: absolute;
+      top: 40%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+    }
 
     .heroHeaderBox {
       height: 100%;

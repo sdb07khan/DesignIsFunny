@@ -6,7 +6,9 @@
     // Footer container styles
 
     .footerHeadingBox {
-      // Footer heading box styles
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       .headingText {
         font-family: var(--primary-font-bold);

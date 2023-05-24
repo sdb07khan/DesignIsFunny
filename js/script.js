@@ -165,3 +165,41 @@ $(document).ready(function () {
     }
   );
 });
+
+// nav link scroll underline HIGHLIGHT
+// Get all the section elements
+const sections = document.querySelectorAll("section");
+
+// Get all the .navItemLink elements
+const navLinks = document.querySelectorAll(".navItemLink");
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Get the id of the intersecting section
+        const sectionId = entry.target.id;
+
+        // Remove the 'active' class from all the nav links
+        navLinks.forEach((link) => link.classList.remove("active"));
+
+        // Add the 'active' class to the corresponding nav link
+        const activeLink = document.querySelector(
+          `.navItemLink[href="#${sectionId}"]`
+        );
+        activeLink.classList.add("active");
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // Adjust this threshold as needed
+  }
+);
+
+// Observe each section
+sections.forEach((section) => {
+  observer.observe(section);
+});

@@ -27,28 +27,28 @@
           <ul class="navList">
             <li class="navItem">
               <div class="navItemBox">
-                <a href="#" class="navItemLink"
+                <a href="#hero" class="navItemLink"
                   ><span><div class="navItemName">01/HEY</div></span></a
                 >
               </div>
             </li>
             <li class="navItem">
               <div class="navItemBox">
-                <a href="#" class="navItemLink"
+                <a href="#about" class="navItemLink"
                   ><span><div class="navItemName">02/ABOUT</div></span></a
                 >
               </div>
             </li>
             <li class="navItem">
               <div class="navItemBox">
-                <a href="#" class="navItemLink"
+                <a href="#work" class="navItemLink"
                   ><span><div class="navItemName">03/WORK</div></span></a
                 >
               </div>
             </li>
             <li class="navItem">
               <div class="navItemBox">
-                <a href="#" class="navItemLink"
+                <a href="#contact" class="navItemLink"
                   ><span><div class="navItemName">04/CONTACT</div></span></a
                 >
               </div>
@@ -56,8 +56,18 @@
           </ul>
         </nav>
       </header>
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="heroContainer">
+          <div class="iconBoxHero">
+            <lottie-player
+              src="https://assets7.lottiefiles.com/packages/lf20_UHhZXv9VWn.json"
+              background="transparent"
+              speed="1.3"
+              style="width: 400px; height: 400px"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
           <div class="heroHeaderBox">
             <div class="heroHeading">
               <h1 class="headingText" id="heroHeadingText-js">
@@ -72,7 +82,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section class="about" id="about">
         <div class="aboutContainer">
           <div class="aboutBox">
             <div class="headingContainer">
@@ -169,7 +179,7 @@
         </div>
       </section>
 
-      <section class="work">
+      <section class="work" id="work">
         <div class="workContainer">
           <ul class="workList">
             <li class="item">
@@ -416,12 +426,22 @@
         </div>
       </section>
 
-      <footer class="footer">
+      <section class="footer" id="contact">
         <div class="footerContainer">
           <div class="footerHeadingBox">
             <h1 class="headingText" id="footerHeading-js">
               Want to <br />reach <span class="italicBold">out?</span>
             </h1>
+            <div class="iconBoxFooter">
+              <lottie-player
+                src="https://assets7.lottiefiles.com/packages/lf20_v7gj8hb1.json"
+                background="transparent"
+                speed="1.25"
+                style="width: 400px; height: 400px"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
           </div>
           <div class="footerContactBox">
             <div class="rotatingAnimationBox">
@@ -509,9 +529,12 @@
             </ul>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
