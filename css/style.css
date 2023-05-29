@@ -42,6 +42,12 @@
     opacity: 1;
     transform: translateY(0); } }
 
+@keyframes rotate {
+  from {
+    transform: rotate(360deg); }
+  to {
+    transform: rotate(0); } }
+
 *,
 *::after,
 *::before {
@@ -81,9 +87,15 @@ body {
   .about .aboutContainer {
     display: flex;
     justify-content: space-between; }
+    @media only screen and (max-width: 68.75em) {
+      .about .aboutContainer {
+        display: block; } }
     .about .aboutContainer .aboutBox {
       position: relative;
       width: 60%; }
+      @media only screen and (max-width: 68.75em) {
+        .about .aboutContainer .aboutBox {
+          width: 100%; } }
       .about .aboutContainer .aboutBox .headingContainer {
         position: relative;
         z-index: 1000; }
@@ -91,6 +103,9 @@ body {
           font-family: var(--primary-font-bold);
           font-size: 4rem;
           line-height: 1.2; }
+          @media only screen and (max-width: 68.75em) {
+            .about .aboutContainer .aboutBox .headingContainer .introHeading {
+              width: 90vw; } }
           .about .aboutContainer .aboutBox .headingContainer .introHeading .introRegister {
             position: relative;
             display: inline; }
@@ -157,14 +172,30 @@ body {
         bottom: 0;
         left: 0;
         z-index: 5; }
+        @media only screen and (max-width: 81.25em) {
+          .about .aboutContainer .aboutBox .contentContainer {
+            gap: 0; } }
+        @media only screen and (max-width: 68.75em) {
+          .about .aboutContainer .aboutBox .contentContainer {
+            bottom: -160rem;
+            display: block; } }
+        @media only screen and (max-width: 56.25em) {
+          .about .aboutContainer .aboutBox .contentContainer {
+            bottom: -148rem; } }
         .about .aboutContainer .aboutBox .contentContainer .contentBox {
           width: 30rem;
           display: flex;
           flex-direction: column;
           gap: 4rem; }
+          @media only screen and (max-width: 68.75em) {
+            .about .aboutContainer .aboutBox .contentContainer .contentBox {
+              width: 100%; } }
           .about .aboutContainer .aboutBox .contentContainer .contentBox .para {
             font-family: var(--primary-font-medium);
             font-size: 1.4rem; }
+            @media only screen and (max-width: 68.75em) {
+              .about .aboutContainer .aboutBox .contentContainer .contentBox .para {
+                width: 50vw; } }
         .about .aboutContainer .aboutBox .contentContainer .shortDescBox {
           font-family: var(--primary-font-medium);
           font-size: 1.4rem;
@@ -172,6 +203,9 @@ body {
           gap: 8px;
           align-items: center;
           width: 30rem; }
+          @media only screen and (max-width: 68.75em) {
+            .about .aboutContainer .aboutBox .contentContainer .shortDescBox {
+              width: 50vw; } }
           .about .aboutContainer .aboutBox .contentContainer .shortDescBox .starBox {
             display: flex;
             align-items: center; }
@@ -183,6 +217,14 @@ body {
     height: 94vh;
     width: 46rem;
     overflow: hidden; }
+    @media only screen and (max-width: 68.75em) {
+      .about .photoContainer {
+        height: 120rem;
+        width: 100%;
+        margin-top: 4rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .about .photoContainer {
+        height: 100rem; } }
     .about .photoContainer .image1Box,
     .about .photoContainer .image2Box {
       position: absolute;
@@ -206,6 +248,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    @media only screen and (max-width: 81.25em) {
+      .footer .footerContainer .footerHeadingBox {
+        flex-direction: column; } }
     .footer .footerContainer .footerHeadingBox .headingText {
       font-family: var(--primary-font-bold);
       font-size: 14rem;
@@ -213,30 +258,47 @@ body {
   .footer .footerContainer .footerContactBox {
     display: flex;
     justify-content: space-between;
-    padding: 8rem 0 6rem 0; }
+    align-items: center; }
+    @media only screen and (max-width: 81.25em) {
+      .footer .footerContainer .footerContactBox {
+        flex-direction: column;
+        padding: 0; } }
     .footer .footerContainer .footerContactBox .rotatingAnimationBox {
       display: block;
       width: 100%;
       background: var(--main-color);
       position: relative; }
-      .footer .footerContainer .footerContactBox .rotatingAnimationBox .circular-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        top: 0;
-        left: 0; }
-        .footer .footerContainer .footerContactBox .rotatingAnimationBox .circular-text #rotated {
-          font-family: var(--primary-font-medium);
-          font-size: 1.6rem; }
-        .footer .footerContainer .footerContactBox .rotatingAnimationBox .circular-text .dot {
-          display: block;
-          width: 50px;
-          height: 50px;
-          position: absolute; }
+      .footer .footerContainer .footerContactBox .rotatingAnimationBox #container {
+        margin: 0%; }
+        .footer .footerContainer .footerContactBox .rotatingAnimationBox #container #circle {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          height: 300px;
+          width: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: rotate 10s linear infinite; }
+          .footer .footerContainer .footerContactBox .rotatingAnimationBox #container #circle .dot {
+            width: 150px;
+            height: 150px;
+            transform: scale(0.05);
+            border-radius: 50%;
+            background: var(--black-0);
+            transition: all 0.3s ease-out; }
+        .footer .footerContainer .footerContactBox .rotatingAnimationBox #container #circle:hover .dot {
+          transform: scale(0.7); }
+        .footer .footerContainer .footerContactBox .rotatingAnimationBox #container #circle text {
+          font-family: "Helvetica Neue", Arial;
+          font-size: 16px;
+          font-weight: bold; }
+        .footer .footerContainer .footerContactBox .rotatingAnimationBox #container #circle svg {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 300px; }
     .footer .footerContainer .footerContactBox .emailBox .emailContent .emailLink {
       display: inline-flex;
       text-decoration: none;
@@ -388,6 +450,9 @@ body {
 
 .work {
   padding: 8rem 0 12rem 0; }
+  @media only screen and (max-width: 68.75em) {
+    .work {
+      margin-top: 40rem; } }
   .work .workContainer .workList .item {
     list-style: none; }
     .work .workContainer .workList .item .itemLink {

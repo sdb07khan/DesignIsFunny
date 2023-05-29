@@ -6,9 +6,17 @@
     display: flex;
     justify-content: space-between;
 
+    @media only screen and (max-width: $bp-large) {
+      display: block;
+    }
+
     .aboutBox {
       position: relative;
       width: 60%;
+
+      @media only screen and (max-width: $bp-large) {
+        width: 100%;
+      }
 
       .headingContainer {
         position: relative;
@@ -18,6 +26,10 @@
           font-family: var(--primary-font-bold);
           font-size: 4rem;
           line-height: 1.2;
+
+          @media only screen and (max-width: $bp-large) {
+            width: 90vw;
+          }
 
           .line {
             // clip-path: polygon(0 0, 100% 0, 100% 120%, 0% 120%);
@@ -56,7 +68,6 @@
             color: var(--black-0);
             font-size: 4rem;
             position: relative;
-            //   border-bottom: 4px solid black;
             overflow: hidden;
 
             .linkContainer {
@@ -124,15 +135,36 @@
         left: 0;
         z-index: 5;
 
+        @media only screen and (max-width: $bp-largest) {
+          gap: 0;
+        }
+
+        @media only screen and (max-width: $bp-large) {
+          bottom: -160rem;
+          display: block;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+          bottom: -148rem;
+        }
+
         .contentBox {
           width: 30rem;
           display: flex;
           flex-direction: column;
           gap: 4rem;
 
+          @media only screen and (max-width: $bp-large) {
+            width: 100%;
+          }
+
           .para {
             font-family: var(--primary-font-medium);
             font-size: 1.4rem;
+
+            @media only screen and (max-width: $bp-large) {
+              width: 50vw;
+            }
           }
         }
 
@@ -143,6 +175,10 @@
           gap: 8px;
           align-items: center;
           width: 30rem;
+
+          @media only screen and (max-width: $bp-large) {
+            width: 50vw;
+          }
 
           .starBox {
             display: flex;
@@ -168,6 +204,16 @@
     height: 94vh;
     width: 46rem;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-large) {
+      height: 120rem;
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      height: 100rem;
+    }
 
     .image1Box,
     .image2Box {

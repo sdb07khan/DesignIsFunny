@@ -19,3 +19,14 @@
     transform: translateY(0);
   }
 }
+
+// animation rotate
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}

@@ -1,6 +1,10 @@
 .work {
   padding: 8rem 0 12rem 0;
 
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 40rem;
+  }
+
   .workContainer {
     // Styles for the work container
 
